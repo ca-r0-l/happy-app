@@ -7,8 +7,8 @@ import OrphanagesController from "./controllers/OrphanagesController";
 const routes = Router();
 const upload = multer(uploadConfig);
 
-routes.get('/orphanages/:id', OrphanagesController.getById);
-routes.get('/orphanages', OrphanagesController.findAll);
+routes.get('/orphanages/:id', OrphanagesController.showOne);
+routes.get('/orphanages', OrphanagesController.showAll);
 routes.post('/orphanages', upload.array("images"), OrphanagesController.create);
 
 export default routes;
